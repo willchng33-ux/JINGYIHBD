@@ -1,0 +1,6 @@
+{
+  "name": "JING YI 生日快乐 - 微信专属祝福",
+  "description": "专为 JING YI 定制的微信生日祝福互动网页与微信专属生日代码，包含吹蜡烛许愿、烟花特效、温馨寄语与微信密令。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

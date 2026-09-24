@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-calligraphy {
+    font-family: 'Ma Shan Zheng', cursive, serif;
+  }
+  .font-serif-sc {
+    font-family: 'Noto Serif SC', serif;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 16px rgba(255, 180, 50, 0.9)) drop-shadow(0 0 35px rgba(255, 100, 20, 0.6));
+  }
+  25% {
+    transform: scale(1.08, 0.92) translate(-48%, -52%);
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(255, 200, 60, 1)) drop-shadow(0 0 45px rgba(255, 80, 20, 0.7));
+  }
+  50% {
+    transform: scale(0.95, 1.05) translate(-52%, -48%);
+    opacity: 0.88;
+    filter: drop-shadow(0 0 14px rgba(255, 160, 40, 0.85)) drop-shadow(0 0 30px rgba(255, 120, 30, 0.5));
+  }
+  75% {
+    transform: scale(1.04, 0.98) translate(-50%, -51%);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 20px rgba(255, 210, 80, 0.95)) drop-shadow(0 0 40px rgba(255, 90, 20, 0.65));
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes lanternFloat {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-800px) scale(0.4);
+    opacity: 0;
+  }
+}
+
+.animate-lantern-float {
+  animation: lanternFloat 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-candle-flame {
+  animation: flicker 1.2s infinite ease-in-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Glassmorphism touches */
+.glass-panel {
+  background: rgba(28, 22, 48, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 215, 160, 0.18);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 200, 150, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 200, 150, 0.4);
+}
